@@ -23,3 +23,7 @@ function onex::install::install_cfssl()
   chmod +x $HOME/bin/{cfssl,cfssljson,cfssl-certinfo}    
   onex::log::info "install cfssl tools successfully"    
 }   
+
+if [[ "$*" =~ onex::install:: ]]; then
+  eval $*
+fi
